@@ -18,12 +18,12 @@ Harjoitustyön ydin on luonnolliselta vaikuttavaa ja monipuolista maastoa genero
 
 ## Viitteet
 
-https://en.wikipedia.org/wiki/Voronoi_diagram
+- [Voronoi diagram (Wikipedia)](https://en.wikipedia.org/wiki/Voronoi_diagram)
 
-https://en.wikipedia.org/wiki/Fortune%27s_algorithm
+- [Fortune's algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Fortune%27s_algorithm)
 
-https://fi.wikipedia.org/wiki/Soluautomaatti
+- [Soluautomaatti (Wikipedia)](https://fi.wikipedia.org/wiki/Soluautomaatti)
 
-https://en.wikipedia.org/wiki/Perlin_noise
+- [Perlin noise (Wikipedia)](https://en.wikipedia.org/wiki/Perlin_noise)
 
-https://en.wikipedia.org/wiki/Simplex_noise
+- [Simplex noise (Wikipedia)](https://en.wikipedia.org/wiki/Simplex_noise)
