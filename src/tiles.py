@@ -1,3 +1,5 @@
+import random
+
 WIDTH = 20
 HEIGHT = 20
 
@@ -9,22 +11,52 @@ class Map:
         for x in range(self.x):
             for y in range(self.y):
                 self.coordinates.update({(x,y): Tile()})
-    
-    def printMap(self):
+
+    # Sijoittaa kartalle satunnaisesti annetun määrän kohteita kartan jakoa varten. Syötteen tulee olla pienempi kuin kartan leveys*korkeus.
+    def place_sites(self, count: int):
+        sites_to_place = count
+        while sites_to_place > 0:
+            site_x = random.randint(0,self.x-1)
+            site_y = random.randint(0,self.y-1)
+            if not self.coordinates[(site_x, site_y)].is_site():
+                self.coordinates[(site_x, site_y)].place_site()
+                sites_to_place -= 1
+
+    # Tulostaa lopullisen kartan
+    def print_map(self):
         for y in range(self.y):
             y_string = ""
             for x in range(self.x):
-                y_string += str(self.coordinates[(x,y)].getType())
+                y_string += str(self.coordinates[(x,y)].get_type())
                 y_string += " "
             print(y_string)
 
+    # Tulostaa kohteet kartalla
+    def print_sites(self):
+        for y in range(self.y):
+            y_string = ""
+            for x in range(self.x):
+                if self.coordinates[(x,y)].is_site():
+                    y_string += "1 "
+                else:
+                    y_string += "0 "
+            print(y_string)
+
+
 class Tile:
     def __init__(self):
-        self.type = 0
+        self.type = 0       # Kartan kohdan tyyppi: 0 = tyhjää, 1 = kiveä
+        self.site = False   # Sijaitseeko kohdalla karttaa kohdetta
 
-    def getType(self):
+    def get_type(self):
         return self.type
 
+    def is_site(self):
+        return self.site
 
-testMap = Map((WIDTH,HEIGHT))
-testMap.printMap()
+    def place_site(self):
+        self.site = True
+
+test_map = Map((WIDTH,HEIGHT))
+test_map.place_sites(4)
+test_map.print_sites()
