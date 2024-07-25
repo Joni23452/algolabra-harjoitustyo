@@ -31,6 +31,9 @@ class Map:
                 y_string += " "
             print(y_string)
 
+    def get_map(self):
+        return self.coordinates
+    
     # Tulostaa kohteet kartalla
     def print_sites(self):
         for y in range(self.y):
