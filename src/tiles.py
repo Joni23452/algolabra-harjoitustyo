@@ -1,8 +1,5 @@
 import random
 
-WIDTH = 20
-HEIGHT = 20
-
 class Map:
     def __init__(self, size: tuple):
         self.x = size[0]
@@ -22,7 +19,7 @@ class Map:
                 self.coordinates[(site_x, site_y)].place_site()
                 sites_to_place -= 1
 
-    # Tulostaa lopullisen kartan
+    # Tulostaa terminaaliin lopullisen kartan
     def print_map(self):
         for y in range(self.y):
             y_string = ""
@@ -34,7 +31,7 @@ class Map:
     def get_map(self):
         return self.coordinates
     
-    # Tulostaa kohteet kartalla
+    # Tulostaa terminaaliin kohteet kartalla
     def print_sites(self):
         for y in range(self.y):
             y_string = ""
@@ -59,7 +56,3 @@ class Tile:
 
     def place_site(self):
         self.site = True
-
-test_map = Map((WIDTH,HEIGHT))
-test_map.place_sites(4)
-test_map.print_sites()
